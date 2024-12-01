@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1 {
+            width: 200px;
+        }
+        .box {
+            width: 150px;
+            height: 150px;
+            background:red;
+            opacity: 0.4;
+            position: fixed;
+            top: 0;
+            right: 0;
+            transition: all linear 0.5s;
+
+        }
+        .box.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .circle{
+            width: 300px;
+            height: 300px;
+            border: red;
+            background: #000;
+            border-radius: 50%;
+        }
+
+        .newstyle {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background-color: antiquewhite;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box hide"></div>
+    <h1>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam enim inventore architecto tempore ab. Quod quam similique esse voluptate autem repellendus architecto cumque nulla eum quidem! Ex impedit molestias ratione adipisci tempora dolor nesciunt sequi voluptates porro officia! Unde harum eligendi dolorem maiores voluptate! Hic exercitationem doloribus totam amet consequuntur neque distinctio quibusdam explicabo? Expedita perspiciatis dignissimos numquam illo inventore! Molestias, nesciunt illo. Perspiciatis iure nobis magnam dolorum sed iusto. Magni reiciendis repudiandae, provident quo quod at dolor sapiente ipsa exercitationem soluta quae omnis nam facilis harum reprehenderit similique et, earum, repellendus autem totam amet alias! Consequatur cum, eligendi id iure sequi temporibus tempora nesciunt eveniet natus numquam voluptate. Debitis odit optio obcaecati aliquam possimus, sequi id rem unde provident officia. Sunt perferendis cum, hic porro velit minima. Labore odio a, dolorem similique distinctio saepe incidunt ipsum ad molestias? Pariatur explicabo odit qui quaerat illum excepturi necessitatibus cupiditate sunt ea quo, maxime magnam? Ipsam facere esse rem accusantium laudantium ex rerum veritatis nostrum quaerat aspernatur minima, harum omnis consequuntur quod nemo iure aliquam doloremque perspiciatis debitis culpa, saepe quos eaque officiis. Consequuntur enim animi dolorum voluptatum repudiandae est similique, fugiat debitis hic eveniet nemo natus quos necessitatibus? Odio, quam error!
+    </h1>
+    <div class="circle">
+        
+    </div>
+    <h1>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam enim inventore architecto tempore ab. Quod quam similique esse voluptate autem repellendus architecto cumque nulla eum quidem! Ex impedit molestias ratione adipisci tempora dolor nesciunt sequi voluptates porro officia! Unde harum eligendi dolorem maiores voluptate! Hic exercitationem doloribus totam amet consequuntur neque distinctio quibusdam explicabo? Expedita perspiciatis dignissimos numquam illo inventore! Molestias, nesciunt illo. Perspiciatis iure nobis magnam dolorum sed iusto. Magni reiciendis repudiandae, provident quo quod at dolor sapiente ipsa exercitationem soluta quae omnis nam facilis harum reprehenderit similique et, earum, repellendus autem totam amet alias! Consequatur cum, eligendi id iure sequi temporibus tempora nesciunt eveniet natus numquam voluptate. Debitis odit optio obcaecati aliquam possimus, sequi id rem unde provident officia. Sunt perferendis cum, hic porro velit minima. Labore odio a, dolorem similique distinctio saepe incidunt ipsum ad molestias? Pariatur explicabo odit qui quaerat illum excepturi necessitatibus cupiditate sunt ea quo, maxime magnam? Ipsam facere esse rem accusantium laudantium ex rerum veritatis nostrum quaerat aspernatur minima, harum omnis consequuntur quod nemo iure aliquam doloremque perspiciatis debitis culpa, saepe quos eaque officiis. Consequuntur enim animi dolorum voluptatum repudiandae est similique, fugiat debitis hic eveniet nemo natus quos necessitatibus? Odio, quam error!
+    </h1>
+</body>
+<script>
+
+    // scroll.......
+ window.addEventListener("scroll", function() {
+    let scrollTop = window.scrollY;
+    if(scrollTop >= 600 && scrollTop <3000)
+     {
+        document.querySelector(".box").classList.remove("hide")
+     }
+    
+     else {document.querySelector('.box') .classList.add('hide')}
+ })
+
+//  observer.....
+let circle = document.querySelector('.circle');
+let isObserve = (items) => {
+    let section = items[0]
+    if (section .isIntersecting) {
+        console.log('tumi thik aco');
+        observer.disconnect();
+        
+    } else {
+        console.log('tumi vull korcho');
+        
+    }
+    
+}
+let observer = new IntersectionObserver(isObserve)
+observer.observe(circle)
+
+
+</script>
+</html>
